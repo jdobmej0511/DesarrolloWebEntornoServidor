@@ -5,4 +5,4 @@ function crearMensaje(string $nombre, string $saludo = "Hola"): string
 }
 
 echo crearMensaje("Ana") . "<br />" ;
-echo crearMensaje("Luis", "Buenos días") . "<br />" ;
+echo crearMensaje("Luis", "Buenos dias") . "<br />" ;

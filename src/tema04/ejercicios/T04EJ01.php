@@ -1,7 +1,7 @@
 <?php
 function saludar(string $nombre): string
 {
-    return "¡Hola, $nombre! Bienvenido/a.";
+    return "Hola $nombre Bienvenidoa.";
 }
 
 echo saludar("Ana") . "<br>";

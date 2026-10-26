@@ -5,5 +5,5 @@ function mostrarNombre(string $nombre, ?string $apellido = null): void
   else echo "$apellido, $nombre<br />" ;
 }
 
-mostrarNombre("Ana", "García") ;
+mostrarNombre("Ana", "Garcaa") ;
 mostrarNombre("Luis") ;
