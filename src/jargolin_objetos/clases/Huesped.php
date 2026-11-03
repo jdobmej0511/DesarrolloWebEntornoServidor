@@ -24,7 +24,7 @@ class Huesped {
 
     public function imprimir(): string {
         return "<article>
-            <h2>Huesped #{$this->id} — {$this->nombre}</h2>
+            <h2>Huesped {$this->id} — {$this->nombre}</h2>
             <p><strong>Nombre:</strong> {$this->nombre}</p>
             <p><strong>Telefono:</strong> {$this->telefono}</p>
             <p><strong>Correo:</strong> {$this->email}</p>

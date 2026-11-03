@@ -22,10 +22,17 @@ if (!isset($_SESSION["habitaciones"])) {
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Hotel Nocturna</title>
+    <title>index</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Hotel Nocturna</h1>
+    <h1>Hotel del susto</h1>
     <nav>
         <a href="index.php">Inicio</a>
         <a href="habitaciones.php">Habitaciones</a>

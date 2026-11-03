@@ -52,10 +52,17 @@ if (!empty($_POST)) {
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Hotel Nocturna</title>
+    <title>reservas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Hotel Nocturna</h1>
+    <h1>Terror en el  hotel</h1>
     <nav>
         <a href="index.php">Inicio</a>
         <a href="habitaciones.php">Habitaciones</a>
@@ -67,11 +74,11 @@ if (!empty($_POST)) {
 <h2>Reservas</h2>
 
 <?php if ($error !== "") : ?>
-    <p><?php echo $error; ?></p>
+    <p class="error"><?php echo $error; ?></p>
 <?php endif; ?>
 
 <?php if ($exito !== "") : ?>
-    <p><?php echo $exito; ?></p>
+    <p class="exito"><?php echo $exito; ?></p>
 <?php endif; ?>
 
 <h2>Nueva reserva</h2>
