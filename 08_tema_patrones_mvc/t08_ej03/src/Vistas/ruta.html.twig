@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block titulo %}{{ ruta.nombre }}{% endblock %}
+
+{% block contenido %}
+    <h1 class="mb-4">{{ ruta.nombre }}</h1>
+
+    <table class="table table-bordered w-auto">
+        <tr>
+            <th>Identificador</th>
+            <td>{{ ruta.idRuta }}</td>
+        </tr>
+        <tr>
+            <th>Localidad</th>
+            <td>{{ ruta.localidad }}</td>
+        </tr>
+        <tr>
+            <th>Distancia</th>
+            <td>{{ ruta.distancia|number_format(2, ",", ".") }} km</td>
+        </tr>
+        <tr>
+            <th>Desnivel</th>
+            <td>{{ ruta.desnivel }} m</td>
+        </tr>
+        <tr>
+            <th>Dificultad</th>
+            <td>{{ ruta.dificultad.value|capitalize }}</td>
+        </tr>
+    </table>
+
+    <a href="index.php" class="btn btn-success">Volver al listado</a>
+{% endblock %}

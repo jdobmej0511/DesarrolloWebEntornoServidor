@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block titulo %}Error{% endblock %}
+
+{% block contenido %}
+    <div class="alert alert-danger">{{ mensaje }}</div>
+    <a href="index.php" class="btn btn-success">Volver al listado</a>
+{% endblock %}

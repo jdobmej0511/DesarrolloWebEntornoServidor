@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    container_name: t08-ej03-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    command: bash -c "composer install --no-interaction && apache2-foreground"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:lts
+    container_name: t08-ej03-bd
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: senderismo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
