@@ -3,30 +3,15 @@
 {% block titulo %}{{ ruta.nombre }}{% endblock %}
 
 {% block contenido %}
-    <h1>{{ ruta.nombre }}</h1>
+    <p>{{ ruta.nombre }}</p>
 
-    <table border="1">
-        <tr>
-            <th>Identificador</th>
-            <td>{{ ruta.idRuta }}</td>
-        </tr>
-        <tr>
-            <th>Localidad</th>
-            <td>{{ ruta.localidad }}</td>
-        </tr>
-        <tr>
-            <th>Distancia</th>
-            <td>{{ ruta.distancia|number_format(2, ",", ".") }} km</td>
-        </tr>
-        <tr>
-            <th>Desnivel</th>
-            <td>{{ ruta.desnivel }} m</td>
-        </tr>
-        <tr>
-            <th>Dificultad</th>
-            <td>{{ ruta.dificultad.value|capitalize }}</td>
-        </tr>
-    </table>
+    <ul>
+        <li>Identificador: {{ ruta.idRuta }}</li>
+        <li>Localidad: {{ ruta.localidad }}</li>
+        <li>Distancia: {{ ruta.distancia|number_format(2, ",", ".") }} km</li>
+        <li>Desnivel: {{ ruta.desnivel }} m</li>
+        <li>Dificultad: {{ ruta.dificultad.value|capitalize }}</li>
+    </ul>
 
     <p><a href="index.php">Volver al listado</a></p>
 {% endblock %}

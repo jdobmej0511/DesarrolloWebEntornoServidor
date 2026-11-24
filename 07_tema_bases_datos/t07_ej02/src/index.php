@@ -42,16 +42,16 @@ try {
 </head>
 <body>
     <main>
-        <h1>Oficina municipal de objetos perdidos</h1>
+        <p>Oficina municipal de objetos perdidos</p>
 
-        <h2>Buscar por identificador</h2>
+        <p>Buscar por identificador</p>
         <form method="get" action="">
             <label for="id">Identificador</label>
             <input type="number" id="id" name="id" min="1" required value="<?= htmlspecialchars($id) ?>">
             <button type="submit">Buscar</button>
         </form>
 
-        <h2>Buscar por nombre o descripción</h2>
+        <p>Buscar por nombre o descripción</p>
         <form method="get" action="">
             <label for="texto">Texto</label>
             <input type="text" id="texto" name="texto" required value="<?= htmlspecialchars($texto) ?>">
@@ -64,29 +64,18 @@ try {
             <?php if (count($resultados) === 0): ?>
                 <p>No se ha encontrado ningún objeto que coincida con la búsqueda.</p>
             <?php else: ?>
-                <p>Objetos encontrados: <strong><?= count($resultados) ?></strong></p>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Identificador</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Lugar</th>
-                            <th>Fecha de recogida</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($resultados as $objeto): ?>
-                            <tr>
-                                <td><?= $objeto["idObjeto"] ?></td>
-                                <td><?= htmlspecialchars($objeto["nombre"]) ?></td>
-                                <td><?= htmlspecialchars($objeto["descripcion"] ?? "") ?></td>
-                                <td><?= htmlspecialchars($objeto["lugar"]) ?></td>
-                                <td><?= date("d/m/Y", strtotime($objeto["fecha"])) ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <p>Objetos encontrados: <?= count($resultados) ?></p>
+                <ul>
+                    <?php foreach ($resultados as $objeto): ?>
+                        <li>
+                            <?= $objeto["idObjeto"] ?> -
+                            <?= htmlspecialchars($objeto["nombre"]) ?> -
+                            <?= htmlspecialchars($objeto["descripcion"] ?? "") ?> -
+                            <?= htmlspecialchars($objeto["lugar"]) ?> -
+                            <?= date("d/m/Y", strtotime($objeto["fecha"])) ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             <?php endif; ?>
         <?php endif; ?>
     </main>

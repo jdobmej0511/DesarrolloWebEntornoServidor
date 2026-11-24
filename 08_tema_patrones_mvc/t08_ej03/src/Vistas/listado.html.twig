@@ -3,7 +3,7 @@
 {% block titulo %}Rutas disponibles{% endblock %}
 
 {% block contenido %}
-    <h1>Rutas disponibles</h1>
+    <p>Rutas disponibles</p>
 
     <form method="get" action="index.php">
         <input type="hidden" name="accion" value="listar">
@@ -24,25 +24,13 @@
     {% if rutas is empty %}
         <p>No hay rutas con esa dificultad.</p>
     {% else %}
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Localidad</th>
-                    <th>Dificultad</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for ruta in rutas %}
-                    <tr>
-                        <td>{{ ruta.nombre }}</td>
-                        <td>{{ ruta.localidad }}</td>
-                        <td>{{ ruta.dificultad.value|capitalize }}</td>
-                        <td><a href="index.php?accion=ver&id={{ ruta.idRuta }}">Ver ruta</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <ul>
+            {% for ruta in rutas %}
+                <li>
+                    {{ ruta.nombre }} - {{ ruta.localidad }} - {{ ruta.dificultad.value|capitalize }} -
+                    <a href="index.php?accion=ver&id={{ ruta.idRuta }}">Ver ruta</a>
+                </li>
+            {% endfor %}
+        </ul>
     {% endif %}
 {% endblock %}
