@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    container_name: t07-ej02-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:lts
+    container_name: t07-ej02-bd
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: objetos_perdidos
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./objetos_perdidos.sql:/docker-entrypoint-initdb.d/objetos_perdidos.sql
