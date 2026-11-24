@@ -18,13 +18,13 @@ CREATE TABLE objeto (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ;
 
 INSERT INTO objeto (nombre, descripcion, lugar, fecha) VALUES
-	('Paraguas', 'Paraguas negro plegable con mango de madera', 'Estación de autobuses', '2026-09-03'),
-	('Cartera', 'Cartera de piel marrón sin documentación', 'Parque Central', '2026-09-12'),
-	('Llaves', 'Juego de tres llaves con llavero rojo', 'Biblioteca municipal', '2026-09-20'),
-	('Teléfono móvil', 'Móvil con funda azul y la pantalla rota', 'Polideportivo', '2026-10-01'),
-	('Gafas de sol', 'Gafas de sol con montura negra en su funda', 'Playa de la Malagueta', '2026-10-05'),
-	('Mochila', 'Mochila escolar verde con libros de texto', 'Parada de metro', '2026-10-11'),
-	('Bufanda', 'Bufanda de lana gris de rayas', 'Teatro Cervantes', '2026-10-18'),
-	('Reloj', 'Reloj de pulsera plateado con correa de cuero negra', 'Mercado de Atarazanas', '2026-10-27'),
-	('Bicicleta', 'Bicicleta infantil roja con cesta', 'Paseo del Parque', '2026-11-04'),
-	('Auriculares', 'Auriculares inalámbricos blancos en su estuche', 'Autobús línea 11', '2026-11-15') ;
+	('Escopeta táctica', 'Escopeta de rareza épica con el cargador vacío', 'Pisos Picados', '2026-09-03'),
+	('Pico recolector', 'Pico por defecto con el mango algo desgastado', 'Pueblo Tomate', '2026-09-12'),
+	('Poción de escudo', 'Poción azul que da 50 puntos de escudo', 'Parque Placentero', '2026-09-20'),
+	('Botiquín', 'Botiquín de primeros auxilios que cura toda la vida', 'Lago Botín', '2026-10-01'),
+	('Granada de impulso', 'Granada morada que lanza por los aires a quien está cerca', 'Zona Comercial', '2026-10-05'),
+	('Fusil de asalto', 'Fusil de rareza legendaria de color dorado', 'Pisos Picados', '2026-10-11'),
+	('Planeador', 'Planeador plegado con estampado de llamas', 'Autobús de batalla', '2026-10-18'),
+	('Llama de suministros', 'Llama de piñata llena de munición y materiales', 'Parque Placentero', '2026-10-27'),
+	('Cofre del tesoro', 'Cofre dorado que todavía brilla y hace ruido', 'Pueblo Tomate', '2026-11-04'),
+	('Plátano de pescado', 'Pez saltarín amarillo que cura 15 puntos de vida', 'Lago Botín', '2026-11-15') ;
