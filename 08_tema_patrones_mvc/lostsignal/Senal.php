@@ -51,21 +51,22 @@ class Senal
         $this->identificador = $identificador;
     }
 
-    private static function hidratar(array $fila): Senal
-    {
-        return new Senal(
-            $fila['codigo'],
-            $fila['estacion'],
-            (float) $fila['frecuencia'],
-            (int) $fila['intensidad'],
-            EstadoSenal::from($fila['estado']),
-            (int) $fila['identificador']
-        );
-    }
-
     public static function obtenerTodas(): array
     {
-        return array_map(self::hidratar(...), consultarSenales());
+        $senales = [];
+
+        foreach (consultarSenales() as $fila) {
+            $senales[] = new Senal(
+                $fila['codigo'],
+                $fila['estacion'],
+                (float) $fila['frecuencia'],
+                (int) $fila['intensidad'],
+                EstadoSenal::from($fila['estado']),
+                (int) $fila['identificador']
+            );
+        }
+
+        return $senales;
     }
 
     public function guardar(): void
@@ -97,7 +98,14 @@ class Senal
             return null;
         }
 
-        return self::hidratar($fila);
+        return new Senal(
+            $fila['codigo'],
+            $fila['estacion'],
+            (float) $fila['frecuencia'],
+            (int) $fila['intensidad'],
+            EstadoSenal::from($fila['estado']),
+            (int) $fila['identificador']
+        );
     }
 
     private function cambiarEstado(EstadoSenal $nuevoEstado): bool
@@ -124,6 +132,19 @@ class Senal
 
     public static function obtenerPorEstado(EstadoSenal $estado): array
     {
-        return array_map(self::hidratar(...), consultarSenalesPorEstado($estado->value));
+        $senales = [];
+
+        foreach (consultarSenalesPorEstado($estado->value) as $fila) {
+            $senales[] = new Senal(
+                $fila['codigo'],
+                $fila['estacion'],
+                (float) $fila['frecuencia'],
+                (int) $fila['intensidad'],
+                EstadoSenal::from($fila['estado']),
+                (int) $fila['identificador']
+            );
+        }
+
+        return $senales;
     }
 }
