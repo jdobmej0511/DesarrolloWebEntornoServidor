@@ -39,3 +39,5 @@ docker compose up -d
 ```
 
 Después, importar el `.sql` en la base de datos y abrir `http://localhost`.
+
+La práctica `08_tema_patrones_mvc/lostsignal` usa el entorno proporcionado en clase: el script `.sql` se importa solo al levantar los contenedores y la aplicación se abre en `http://localhost:8080`.

@@ -1,0 +1,16 @@
+services:
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lostsignal
+      MYSQL_USER: alumno
+      MYSQL_PASSWORD: alumno
+    volumes:
+      - ./lostsignal.sql:/docker-entrypoint-initdb.d/lostsignal.sql:ro
