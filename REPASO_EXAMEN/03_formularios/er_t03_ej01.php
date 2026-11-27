@@ -2,13 +2,15 @@
 formulario sigue visible y conserva los valores. -->
 
 <?php
+
 $nombre = trim($_POST['nombre'] ?? '');
 $apellido = trim($_POST['apellido'] ?? '');
 $saludo = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $nombre !== '' && $apellido !== '') {
-    $saludo = 'Hola ' . htmlspecialchars($nombre) . ' ' . htmlspecialchars($apellido);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $nombre !== '' && $apellido !== ''){
+    $saludo = 'Hola '. htmlspecialchars($nombre) . ' ' . htmlspecialchars($apellido);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,14 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $nombre !== '' && $apellido !== '')
     <title>T03 EJ01</title>
 </head>
 <body>
-    <form action="er_t03_ej01.php" method = 'post'>
-        <input type="text" name='nombre' value='<?= htmlspecialchars($nombre) ?>' required>
-        <input type="text" name= "apellido" value="<?= htmlspecialchars($apellido) ?>" required>
-        <button type="submit">Saludar</button>
-    </form>
+    <form method = 'post'>
+        <input type="text" name="nombre" value="<?=htmlspecialchars($nombre)?>" required>
+        <input type="text" name="apellido" value="<?=htmlspecialchars($apellido)?>" required>
+        <button action="submit">Saludar</button>
 
-    <?php if ($saludo !== ''): ?>
-        <p><?= $saludo ?></p>
-    <?php endif ?>
+        <?php if ($saludo !== ''): ?>
+            <p><?= $saludo ?></p>
+        <?php endif; ?>
+    </form>
 </body>
 </html>
